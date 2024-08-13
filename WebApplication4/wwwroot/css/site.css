@@ -38,7 +38,7 @@ body {
 }
 
 .rounded-circle {
-    padding: 5px;
+    margin: 5px;
     max-height:70px;
     max-width:70px;
 }
@@ -99,4 +99,8 @@ body {
     border-radius: 40%;
 }
 
+
+.textSmall {
+    font-size: 0.8rem;
+}
 
