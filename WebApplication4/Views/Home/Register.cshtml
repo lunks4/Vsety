@@ -1,4 +1,5 @@
-﻿
+﻿@using WebApplication4.Models
+@model User
 @{
     ViewData["Title"] = "Autorisation";
 }
@@ -7,11 +8,22 @@
     <div>
         <h1>ВСети</h1>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputText1" class="form-label">Text input</label>
-
-        <input type="text" class="" id="exampleInputText1" placeholder="Логин">
-
-    </div>
+    <form asp-action="Register" method="post">
+        <div>
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" />
+        </div>
+        <div>
+            <label asp-for="Mail"></label>
+            <input asp-for="Mail" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" />
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
 
 </div>

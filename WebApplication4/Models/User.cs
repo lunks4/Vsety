@@ -4,10 +4,19 @@ namespace WebApplication4.Models
 {
     public class User
     {
-        public int id { get; set; }
-        public string Login { get; set; }
+        [Key]
+        [Required]
+        public int Id { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string? PhoneNumber { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string? Mail { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
-        public string Name { get; set; }
-        public int age { get; set; }
+        [Required]
+        public Person Name { get; set; }
     }
 }
