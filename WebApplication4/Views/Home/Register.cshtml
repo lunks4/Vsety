@@ -1,17 +1,94 @@
-﻿
-@{
-    ViewData["Title"] = "Autorisation";
+﻿@{
+    ViewData["Title"] = "Registration";
 }
 
-<div class="container autorization">
-    <div>
-        <h1>ВСети</h1>
+<div class="container registration">
+    <div class="auth-box">
+        <div class="logo">
+            <h1>Регистрация</h1>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="username" placeholder="Логин">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Пароль">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" id="confirm-password" placeholder="Повторите пароль">
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        <div class="existing-account">
+            Уже есть аккаунт? <a href="#">Войти</a>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputText1" class="form-label">Text input</label>
-
-        <input type="text" class="" id="exampleInputText1" placeholder="Логин">
-
-    </div>
-
 </div>
+
+<style>
+    .registration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+        padding: 15px;
+    }
+
+    .auth-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 32px;
+        color: #007bff;
+        text-shadow: 1px 1px 2px #000;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .existing-account {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #007bff;
+    }
+
+        .existing-account a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+            .existing-account a:hover {
+                color: #0056b3;
+            }
+</style>
