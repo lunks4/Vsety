@@ -3,6 +3,10 @@ using WebApplication4.Models.Db;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var app = builder.Build();

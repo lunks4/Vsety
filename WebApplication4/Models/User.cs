@@ -6,7 +6,7 @@ namespace WebApplication4.Models
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string? PhoneNumber { get; set; }
 
@@ -16,7 +16,6 @@ namespace WebApplication4.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-        [Required]
-        public Person Name { get; set; }
+        public Person? Person { get; set; }
     }
 }

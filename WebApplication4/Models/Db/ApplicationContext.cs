@@ -4,19 +4,22 @@ namespace WebApplication4.Models.Db
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Person> Persons { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
+            Database.EnsureCreated();
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder.Entity<User>().HasData(
-                    new User { Id = 1, Password = "Tom", Name = new Person() },
-                    new User { Id = 2, Password = "Bob", Name = new Person() },
-                    new User { Id = 3, Password = "Sam", Name = new Person() }
-            );
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySql("Server=localhost;port=3306;Database=db_vsety;User=root;Password=admin;",
+                    new MySqlServerVersion(new Version(8, 0, 21)));
+
+            }
         }
     }
 }
